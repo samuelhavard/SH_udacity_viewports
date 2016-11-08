@@ -82,13 +82,18 @@ public class ViewportsExercise extends ApplicationAdapter {
 
         renderer.rect(x + newWidth, y + newHeight, newWidth, newHeight);
 
-        punchCantorGasket(x, y, newWidth, newHeight, recursions - 1);
-        punchCantorGasket(x + newWidth, y, newWidth, newHeight, recursions - 1);
-        punchCantorGasket(x + 2 * newWidth, y, newWidth, newHeight, recursions - 1);
-        punchCantorGasket(x, y + newHeight, newWidth, newHeight, recursions - 1);
-        punchCantorGasket(x + 2 * newWidth, y + newHeight, newWidth, newHeight, recursions - 1);
-        punchCantorGasket(x, y + 2 * newHeight, newWidth, newHeight, recursions - 1);
-        punchCantorGasket(x + newWidth, y + 2 * newHeight, newWidth, newHeight, recursions - 1);
-        punchCantorGasket(x + 2 * newWidth, y + 2 * newHeight, newWidth, newHeight, recursions - 1);
+//        punchCantorGasket(x, y, newWidth, newHeight, recursions - 1);
+//        punchCantorGasket(x + newWidth, y, newWidth, newHeight, recursions - 1);
+//        punchCantorGasket(x + 2 * newWidth, y, newWidth, newHeight, recursions - 1);
+//        punchCantorGasket(x, y + newHeight, newWidth, newHeight, recursions - 1);
+//        punchCantorGasket(x + 2 * newWidth, y + newHeight, newWidth, newHeight, recursions - 1);
+//        punchCantorGasket(x, y + 2 * newHeight, newWidth, newHeight, recursions - 1);
+//        punchCantorGasket(x + newWidth, y + 2 * newHeight, newWidth, newHeight, recursions - 1);
+//        punchCantorGasket(x + 2 * newWidth, y + 2 * newHeight, newWidth, newHeight, recursions - 1);
+
+        for (int i = 0; i < 9; i++) {
+            if (i == 4) continue;
+            punchCantorGasket(i % 3 * newWidth + x, i / 3 * newHeight + y, newWidth, newHeight, recursions - 1);
+        }
     }
 }
